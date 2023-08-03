@@ -28,6 +28,8 @@ html{
 }
 body{
     font-family: "Ruhl",sans-serif;
+    overflow-x: auto;
+
 }
 h1{
     font-size: var(--header1);
@@ -210,7 +212,6 @@ a{
     min-height: 90vh;
     display: flex;
     flex-wrap: wrap;
-    /* background: linear-gradient(#dad8dd, #dad1d4); */
 }
 .form-wrapper{
     background: linear-gradient(#dad8dd, #dad1d4);
@@ -290,6 +291,9 @@ footer ul li a img{
     }
 }
 @media (max-width:799px){
+    /* body{
+        width: 100%;
+    } */
  nav{
     text-align: center;
  }   
@@ -325,7 +329,8 @@ footer ul li a img{
         grid-row: auto;
     }
     .gallery{
-        grid-template-columns: repeat(auto-fit , minmax(30rem,1fr));       
+        grid-template-columns: repeat(auto-fit , minmax(30rem,1fr)); 
+        overflow: hidden;      
     }
     .gallery-head{
         display: none;
@@ -344,5 +349,11 @@ footer ul li a img{
     }
     form{
         margin-top: 2rem 0rem;
+    }
+}
+@media (max-width:333px){
+    .gallery img{
+        object-fit: cover;
+        width: 61%;
     }
 }
